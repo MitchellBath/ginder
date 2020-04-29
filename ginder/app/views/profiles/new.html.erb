@@ -1,1 +1,27 @@
-<p>New profile</p>
+<p>New Profile</p>
+
+<%= form_for :profile, url: profiles_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :biography %><br>
+    <%= f.text_area :biography %>
+  </p>
+  
+  <p>
+    <%= f.label :favorite_Game %><br>
+    <%= f.text_field :favorite_Game %>
+  </p>
+  
+  <p>
+    <%= f.label :casual_or_competitive %><br>
+    <%= f.text_field :casual_or_competitive %>
+  </p>  
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
