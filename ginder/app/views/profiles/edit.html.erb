@@ -1,44 +1,5 @@
 <h1>Editing Profile</h1>
  
-<%= form_for :profile, url: profile_path(@profile), method: :patch do |f| %>
- 
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@profile.errors.count, "error") %> prohibited
-        this profile from being saved:
-      </h2>
-      <ul>
-        <% @profile.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.label :biography %><br>
-    <%= f.text_area :biography %>
-  </p>
-  
-  <p>
-    <%= f.label :favorite_game %><br>
-    <%= f.text_field :favorite_game %>
-  </p>
-  
-  <p>
-    <%= f.label :casual_or_competitive %><br>
-    <%= f.text_field :casual_or_competitive %>
-  </p>  
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', profiles_path %>
