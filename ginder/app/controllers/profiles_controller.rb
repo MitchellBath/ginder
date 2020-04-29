@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
     def new
+        @profile = Profile.new
     end
     
     def index
@@ -8,8 +9,11 @@ class ProfilesController < ApplicationController
     
     def create
         @profile = Profile.new(profile_params)
-        @profile.save
-        render plain: params[:profile].inspect
+        if @profile.save
+            redirect_to @profile
+        else
+            render 'new'
+        end
     end
     
     def show
