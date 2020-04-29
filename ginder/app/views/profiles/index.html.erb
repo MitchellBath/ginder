@@ -16,6 +16,7 @@
       <td><%= profile.favorite_game %></td>
       <td><%= profile.casual_or_competitive %></td>
       <td><%= link_to 'Show', profile_path(profile) %></td>
+      <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
     </tr>
   <% end %>
 </table>
