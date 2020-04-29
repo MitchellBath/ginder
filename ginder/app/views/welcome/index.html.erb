@@ -1,5 +1,14 @@
 <center><img src="https://cdn.discordapp.com/attachments/689668367761539113/701848933957108274/readyup.png" height="400" width="400" alt="Ready Up Logo"></center>
 <br>
-<center>
+<center><p>
     <%= link_to 'Profiles', controller: 'profiles' %>
-</center>
+    
+    <% if current_user %>
+        Logged in as <%= current_user.name %>
+        <%= link_to "Log Out", logout_path %>
+    <% else %>
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log In", login_path %>
+    <% end %>
+    
+</p></center>
