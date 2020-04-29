@@ -17,6 +17,7 @@
       <td><%= profile.casual_or_competitive %></td>
       <td><%= link_to 'Show', profile_path(profile) %></td>
       <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+      <td><%= link_to 'Destroy', profile_path(profile), method: :delete, data: { confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>
