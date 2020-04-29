@@ -1,0 +1,20 @@
+<h1>Listing Profiles</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bio</th>
+    <th>Favorite Game</th>
+    <th>Casual / Competitive</th>
+  </tr>
+ 
+  <% @profiles.each do |profile| %>
+    <tr>
+      <td><%= profile.name %></td>
+      <td><%= profile.biography %></td>
+      <td><%= profile.favorite_game %></td>
+      <td><%= profile.casual_or_competitive %></td>
+      <td><%= link_to 'Show', profile_path(profile) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -2,6 +2,10 @@ class ProfilesController < ApplicationController
     def new
     end
     
+    def index
+        @profiles = Profile.all
+    end
+    
     def create
         @profile = Profile.new(profile_params)
         @profile.save
