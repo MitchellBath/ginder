@@ -1,4 +1,10 @@
 <h1>Listing Profiles</h1>
+
+<%= form_tag profiles_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :name => nil) %>
+<% end %>
+
 <%= link_to 'New Profile', new_profile_path %>
  
 <table>

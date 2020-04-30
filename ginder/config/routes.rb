@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :users
+  resources :users do
+    resources :profiles
+  end
+  
+  get "profiles/index" => "profiles#index"
   
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'

@@ -4,7 +4,11 @@ class ProfilesController < ApplicationController
     end
     
     def index
-        @profiles = Profile.all
+        if params[:search]
+            @profiles = Profile.where(casual_or_competitive: params[:search])
+        else
+            @profiles = Profile.all
+        end
     end
     
     def edit
@@ -18,6 +22,10 @@ class ProfilesController < ApplicationController
         else
             render 'edit'
         end
+    end
+    
+    def profile_params
+        params.require(:profile).permit(:name, :profile_id, :search)
     end
     
     def create
@@ -44,4 +52,5 @@ class ProfilesController < ApplicationController
         def profile_params
             params.require(:profile).permit(:name, :biography, :favorite_game, :casual_or_competitive)
         end
+    
 end
